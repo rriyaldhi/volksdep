@@ -111,7 +111,7 @@ class TRTModel(nn.Module):
         for i, name in enumerate(self.output_names):
             name = self._rename(self.profile_index, name)
             idx = self.engine.get_binding_index(name)
-            print(idx)
+            print(str(idx))
             print(self.context)
             shape = tuple(self.context.get_binding_shape(idx))
             dtype = torch_dtype_from_trt(self.engine.get_binding_dtype(idx))
